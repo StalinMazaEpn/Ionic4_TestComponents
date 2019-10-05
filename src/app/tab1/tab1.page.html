@@ -1,41 +1,146 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab One
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>
+            Problemas Sociales
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <ion-card class="welcome-card">
-      <img src="/assets/shapes.svg" alt="" />
-      <ion-card-header>
-        <ion-card-subtitle>Get Started</ion-card-subtitle>
-        <ion-card-title>Welcome to Ionic</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
-      </ion-card-content>
-    </ion-card>
-    <ion-list lines="none">
-      <ion-list-header>
-        <ion-label>Resources</ion-label>
-      </ion-list-header>
-      <ion-item href="https://ionicframework.com/docs/">
-        <ion-icon slot="start" color="medium" name="book"></ion-icon>
-        <ion-label>Ionic Documentation</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/building/scaffolding">
-        <ion-icon slot="start" color="medium" name="build"></ion-icon>
-        <ion-label>Scaffold Out Your App</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/layout/structure">
-        <ion-icon slot="start" color="medium" name="grid"></ion-icon>
-        <ion-label>Change Your App Layout</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/theming/basics">
-        <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
-        <ion-label>Theme Your App</ion-label>
-      </ion-item>
-    </ion-list>
+    <p>
+        <span (click)="showOne()">Show 1</span>
+        <span (click)="showTwo()">Show 2</span>
+    </p>
+    <div *ngIf="showPost===1">
+        <h1 style="text-align:center; background: cadetblue;color: white;">
+            Problemas Sociales</h1>
+        <ion-card class="social-problem" *ngFor="let i of [1,1,1]">
+            <div class="post-cover-image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWvcUcBzXg-QFPRAHublaqPJ20USveOD2vElaqxJrDt0ofTOsj"
+                    alt="Imagen Tarjeta" class="img" />
+                <div class="social-buttons single">
+                    <div class="item-button">
+                        <ion-icon class="like" name="heart">
+                        </ion-icon>
+                    </div>
+                </div>
+            </div>
+            <ion-card-header class="post-header">
+                <ion-card-title class="post-title"> Essential Https Concepts you should know
+                </ion-card-title>
+            </ion-card-header>
+            <ion-card-content class="post-content">
+                <p class="post-description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati reiciendis
+                    quibusdam odit aperiam
+                </p>
+                <p class="post-see-more">Leer más</p>
+            </ion-card-content>
+        </ion-card>
+    </div>
+
+    <h1 style="text-align:center; background: cadetblue;color: white;" *ngIf="showPost===2">Problema
+        Social</h1>
+    <div class="social-problem-detail" *ngIf="showPost===2">
+        <div class="post-cover-image">
+            <div class="post-cover-image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWvcUcBzXg-QFPRAHublaqPJ20USveOD2vElaqxJrDt0ofTOsj"
+                    alt="Imagen Tarjeta" class="img" />
+            </div>
+            <div class="social-buttons">
+                <div class="item-button">
+                    <ion-icon class="like" name="heart">
+                    </ion-icon>
+                </div>
+                <div class="item-button">
+                    <ion-icon class="share" name="share"></ion-icon>
+                </div>
+            </div>
+        </div>
+        <div class="post-info-container">
+            <div class="post-container-main-info">
+                <div class="main-post-info">
+                    <p class="item-info">
+                        <span class="icon-fulldate">
+                            <ion-icon name="calendar" class="social-problem-state"></ion-icon>
+                        </span>
+                        <span>25 de Septiembre, 2019 </span>
+                    </p>
+                    <p class="item-info">
+                        <span class="icon-ubication">
+                            <ion-icon name="pin" class="social-problem-state"></ion-icon>
+                        </span>
+                        <span>Av 6 de Dicembre y Amazonas</span>
+                    </p>
+                    <p class="item-info">
+                        <span class="icon-people">
+                            <ion-icon name="people" class="social-problem-state"></ion-icon>
+                        </span>
+                        <span>2 personas les gusta</span>
+                    </p>
+                </div>
+                <div class="state-info" (click)="toggle()">
+                    <ion-chip class="chip-post-state" [class.done]="alternatePost">
+                        <ion-icon [name]="(alternatePost) ? 'checkmark':'alarm'" class="social-problem-state"></ion-icon>
+                        <ion-label>
+                                {{(alternatePost)?'Atendido':'Pendiente'}}
+                        </ion-label>
+                    </ion-chip>
+                </div>
+            </div>
+            <div class="post-description-info">
+                <h2>Essential Https Concepts you should know</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero totam corrupti
+                    obcaecati laudantium commodi, repellat ad iure sapiente enim voluptas, cum quam
+                    voluptatum! Aliquam delectus odit quos. Minus, et a.</p>
+            </div>
+            <div class="map-container" style="width:100%;height:200px;">
+                <h4 class="title">Ubicación</h4>
+                <div style="width: 100%">
+                    <iframe width="100%" height="100%"
+                        src="https://maps.google.com/maps?width=100%&height=600&hl=es&q=Les%20Rambles%2C%201%20Barcelona%2C%20Spain+(Mi%20nombre%20de%20egocios)&ie=UTF8&t=&z=14&iwloc=B&output=embed"
+                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                    </iframe>
+                </div>
+            </div>
+            <div class="image-gallery-container">
+                <h4 class="image-gallery-title">Imágenes</h4>
+                <div class="image-gallery">
+                    <figure class="image-item" *ngFor="let image of [1,1,1,1]">
+                        <img class="image"
+                            src="https://dn60005mpuo2f.cloudfront.net/wp-content/uploads/2012/08/greatplace.jpg"
+                            alt="">
+                        <!-- <figcaption>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                      </figcaption> -->
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- fab placed in the center of the content with a list on each side -->
+    <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+        <ion-fab-button color="primary">
+            <ion-icon name="ios-keypad"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list side="top">
+            <ion-fab-button color="secondary">
+                <ion-icon name="search"></ion-icon>
+            </ion-fab-button>
+
+
+        </ion-fab-list>
+        <ion-fab-list side="start">
+            <ion-fab-button color="danger">
+                <ion-icon name="ios-funnel"></ion-icon>
+            </ion-fab-button>
+        </ion-fab-list>
+        <ion-fab-list side="end">
+            <ion-fab-button color="success">
+                <ion-icon name="send"></ion-icon>
+            </ion-fab-button>
+        </ion-fab-list>
+    </ion-fab>
+
 </ion-content>

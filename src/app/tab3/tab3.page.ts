@@ -7,6 +7,21 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
-  constructor() {}
+    showPost = 2;
+
+    alternatePost = false;
+
+    constructor() { }
+    
+    showOne() {
+        this.showPost = 1;
+    }
+    showTwo() {
+        this.showPost = 2;
+    }
+
+    toggle() {
+        this.alternatePost = !this.alternatePost;
+    }
 
 }

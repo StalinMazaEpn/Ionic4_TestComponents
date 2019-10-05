@@ -12,8 +12,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () =>
-              import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+            loadChildren: '../tab1/tab1.module#Tab1PageModule'
           }
         ]
       },
@@ -22,8 +21,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () =>
-              import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+            loadChildren: '../tab2/tab2.module#Tab2PageModule'
           }
         ]
       },
@@ -32,27 +30,91 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () =>
-              import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+            loadChildren: '../tab3/tab3.module#Tab3PageModule'
+          }
+        ]
+      },
+      {
+        path: 'tab4',
+        children: [
+          {
+            path: '',
+            loadChildren: '../tab4/tab4.module#Tab4PageModule'
+          }
+        ]
+      },
+      {
+        path: 'tab5',
+        children: [
+          {
+            path: '',
+            loadChildren: '../tab5/tab5.module#Tab5PageModule'
+          }
+        ]
+      },
+      {
+        path: 'tab6',
+        children: [
+          {
+            path: '',
+            loadChildren: '../tab6/tab6.module#Tab6PageModule'
+          }
+        ]
+      },
+      {
+        path: 'tab7',
+        children: [
+          {
+            path: '',
+            loadChildren: '../tab7/tab7.module#Tab7PageModule'
+          }
+        ]
+      },
+      {
+        path: 'tab8',
+        children: [
+          {
+            path: '',
+            loadChildren: '../tab8/tab8.module#Tab8PageModule'
+          }
+        ]
+      },
+      {
+        path: 'tab9',
+        children: [
+          {
+            path: '',
+            loadChildren: '../tab9/tab9.module#Tab9PageModule'
+          }
+        ]
+      },
+      {
+        path: 'tabmain',
+        children: [
+          {
+            path: '',
+            loadChildren: '../tabmain/tabmain.module#TabMainPageModule'
           }
         ]
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/tabmain',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/tabmain',
     pathMatch: 'full'
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [
+    RouterModule.forChild(routes)
+  ],
   exports: [RouterModule]
 })
 export class TabsPageRoutingModule {}

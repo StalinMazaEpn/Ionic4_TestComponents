@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,3 +24,75 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.map-container {
+  .title {
+    font-weight: bold;
+    font-size: 1.1em;
+    padding-bottom: 1rem;
+  }
+  margin-bottom: 2em;
+}
+
+.image-gallery-container {
+  // display: flex;
+  .image-gallery-title {
+    font-weight: bold;
+    font-size: 1.1em;
+    padding-bottom: 1rem;
+  }
+  .image-gallery {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+    .image-item {
+      width: 100%;
+      height: 100px;
+      margin: 5px 0;
+      margin-bottom: 1em;
+      .image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+}
+
+.social-buttons {
+  position: absolute;
+  right: 30px;
+  bottom: -20px;
+  display: flex;
+  &.single {
+    right: 10px;
+  }
+  .item-button {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    ion-icon {
+      cursor: pointer;
+      font-size: 1.4rem;
+      padding: 0.6rem;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+      &.share {
+        background: #3c66c4; //color: blue;
+        color: #fff;
+      }
+      &.like {
+        //background:red;
+        background: #fff;
+        color: gray;
+        transition: all 0.2s ease-in-out;
+        &.active {
+          color: red;
+          transition: all 0.3s;
+        }
+      }
+    }
+  }
+}

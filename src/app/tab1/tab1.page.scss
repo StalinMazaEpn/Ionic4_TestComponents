@@ -1,4 +1,77 @@
-.welcome-card img {
-  max-height: 35vh;
-  overflow: hidden;
+
+
+.social-problem{
+    margin-bottom: 2rem;
+    .post-cover-image{
+        width: 100%;
+        position: relative;
+        height: 150px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .post-title{
+        font-weight: bold;
+    }
+    .post-description{
+        margin-bottom: 1rem;
+        &:after {
+            content: "...";
+        }
+    }
+    .post-see-more{
+        padding-bottom: .5rem;
+    }
+}
+
+.social-problem-detail{
+    .post-cover-image{
+        width: 100%;
+        position: relative;
+        height: 175px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .post-info-container{
+        padding: 1em;
+    }
+    .main-post-info{
+        .item-info{
+            ion-icon{
+                margin-right: 1em;
+            }
+            .icon-fulldate{
+                color: #1A78C8;
+            }
+            .icon-ubication{
+                color: #CF4331;
+            }
+            .icon-people{
+                color: #FF5722;
+            }
+        }
+        margin-bottom: 2em;
+    }
+    .state-info{
+        .chip-post-state{
+            --background: #FFEB3B;
+            --color: #1C1616;
+            ion-icon, ion-label{
+                color: inherit;
+            }
+            &.done{
+                --background: #40AF5E;
+                --color: #fff;
+            }
+        }
+        margin-bottom: 2em;
+    }
+    .post-description-info{
+        margin-bottom: 2em;
+    }    
 }

@@ -1,0 +1,82 @@
+
+.card-directive{
+  position: relative;
+  .img-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    .img-thumbnail{
+      position: relative;
+      width: 120px;
+      height: 120px;
+      img{
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+        //border: 14px solid #FFFFFF;
+        //outline: 5px solid black;
+        &.circle{
+        border-radius: 50%;
+        }
+        &.border-double{
+          border: 8px solid #FFFFFF;
+          box-shadow: 0 0 0 8px #1369ce;
+          //box-shadow: 0 0 0 14px #f8a5ec;
+        }
+      }
+      &::after{
+        content: "";
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: #9C27B0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+    }
+    &::before{
+          content: "";
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          background-color: #1369ce;
+          position: absolute;
+          bottom: 145%;
+          //top: 100%;
+          right: 0;
+          left: 0;
+          opacity: 0.9;
+          transform: scale(3);
+          transition: all 0.3s linear 0s;
+      }
+     
+  }
+  .phone-user{
+    .icon{
+      margin-right: .5rem;
+    }
+  }
+   
+}
+
+.social-networks{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #1369ce;
+    left: 0;
+    transition: all 0.5s ease 0s;
+    li{
+      display: inline-block;
+      ion-icon{
+        padding: 10px;
+        color: white;
+        font-size: 1.2rem;
+      }
+    }
+}
